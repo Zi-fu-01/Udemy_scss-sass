@@ -1,0 +1,908 @@
+@charset "UTF-8";
+/*                reset (デフォルト設定の打ち消し)
+======================================================= */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
+  all: unset;
+  display: revert;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 16px;
+}
+
+body, h1, h2, h3, h4, h5 {
+  margin: 0px;
+  padding: 0px;
+  font-weight: normal;
+}
+
+body {
+  color: #42560b;
+  background-color: #ffffff;
+  font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  line-height: 1.3;
+  font-size: 16px;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input[type=text],
+input[type=tel],
+input[type=email],
+input[type=esubmit],
+button,
+select,
+textarea {
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  background: none;
+}
+
+a {
+  cursor: pointer;
+}
+
+a:link {
+  color: #333;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #333;
+  text-decoration: none;
+}
+
+/*                 基本レイアウト
+======================================================= */
+#wrapper {
+  overflow: hidden;
+  background: url(/img/bk_pattern.jpg);
+}
+
+#main_area {
+  position: relative;
+}
+
+.home_section,
+.lower_section {
+  padding-top: 130px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .home_section,
+  .lower_section {
+    padding-top: 120px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .home_section,
+  .lower_section {
+    padding-top: 100px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .home_section,
+  .lower_section {
+    padding-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .lower_section {
+    padding-top: 100px;
+  }
+}
+
+#access.home_section,
+.lower_section {
+  padding-bottom: 140px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #access.home_section,
+  .lower_section {
+    padding-bottom: 120px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #access.home_section,
+  .lower_section {
+    padding-bottom: 90px;
+  }
+}
+
+.main_width {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 1500px) {
+  .main_width {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .main_width {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .main_width {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+/*                共通パーツ
+======================================================= */
+.section_title h1, .section_title h2 {
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 40px;
+  font-family: "IM Fell English", serif;
+  letter-spacing: 0.05em;
+}
+
+@media only screen and (max-width: 1024px) {
+  .section_title h1, .section_title h2 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .section_title h1, .section_title h2 {
+    font-size: 38px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .section_title h1, .section_title h2 {
+    font-size: 26px;
+  }
+}
+
+/*                ヘッダー
+======================================================= */
+header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 10;
+  height: 90px;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+  header {
+    height: 70px;
+  }
+}
+
+header.scroll {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+header .hd_inner {
+  position: relative;
+}
+
+header .hd_inner .hd_navi {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: translateX(-34px);
+          transform: translateX(-34px);
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_navi {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .hd_inner .hd_navi {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+header .hd_inner .hd_navi ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  header .hd_inner .hd_navi ul {
+    display: none;
+  }
+}
+
+header .hd_inner .hd_navi ul li {
+  padding: 0 25px;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_navi ul li {
+    padding: 0 8px;
+  }
+}
+
+header .hd_inner .hd_navi ul li a {
+  display: block;
+  color: #42560b;
+}
+
+header .hd_inner .hd_navi ul li a:hover {
+  text-decoration: none;
+}
+
+header .hd_inner .hd_navi ul li a span {
+  position: relative;
+  font-family: "IM Fell English", serif;
+  font-size: 15px;
+}
+
+@media only screen and (min-width: 769px) {
+  header .hd_inner .hd_navi ul li a span {
+    position: relative;
+  }
+  header .hd_inner .hd_navi ul li a span:before, header .hd_inner .hd_navi ul li a span:after {
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -0.1em;
+    display: block;
+    content: "";
+    background-color: #42560b;
+    opacity: 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  header .hd_inner .hd_navi ul li a span:before {
+    left: 50%;
+  }
+  header .hd_inner .hd_navi ul li a span:after {
+    right: 50%;
+  }
+  header .hd_inner .hd_navi ul li a:hover span:before, header .hd_inner .hd_navi ul li a:hover span:after {
+    width: 50%;
+    opacity: 0.8;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+}
+
+header .hd_inner .hd_navi .hd_logo {
+  padding: 0 25px;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_navi .hd_logo {
+    padding: 0 8px;
+  }
+}
+
+header .hd_inner .hd_navi .hd_logo a {
+  display: block;
+}
+
+@media only screen and (max-width: 768px) {
+  header .hd_inner .hd_navi .hd_logo a h1 img, header .hd_inner .hd_navi .hd_logo a p img {
+    height: 52px;
+    width: auto;
+  }
+}
+
+header .hd_inner .hd_tel {
+  position: absolute;
+  top: 6px;
+  right: 60px;
+}
+
+@media only screen and (max-width: 1300px) {
+  header .hd_inner .hd_tel {
+    right: 40px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_tel {
+    right: 10px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  header .hd_inner .hd_tel {
+    display: none;
+  }
+}
+
+header .hd_inner .hd_tel p span {
+  font-family: "IM Fell English", serif;
+  line-height: 1;
+}
+
+header .hd_inner .hd_tel p span.tel_number {
+  position: relative;
+  padding-left: 10px;
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_tel p span.tel_number {
+    font-size: 24px;
+    padding-left: 30px;
+  }
+}
+
+header .hd_inner .hd_tel p span.tel_number::before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 19px;
+  left: -10px;
+  top: 12px;
+  background: url(/img/tel_green.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media only screen and (max-width: 1024px) {
+  header .hd_inner .hd_tel p span.tel_number::before {
+    left: 10px;
+    top: 8px;
+  }
+}
+
+header .hd_inner .hd_tel p span.small {
+  font-size: 12px;
+}
+
+header .hd_inner .hd_tel p img {
+  margin-right: 4px;
+}
+
+#home header {
+  color: #fff;
+  opacity: 0;
+}
+
+#home header.load {
+  opacity: 1;
+}
+
+#home header.scroll {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#home header .hd_inner .hd_navi ul li a {
+  display: block;
+  color: #fff;
+}
+
+@media only screen and (min-width: 769px) {
+  #home header .hd_inner .hd_navi ul li a span:before, #home header .hd_inner .hd_navi ul li a span:after {
+    background-color: #fff;
+  }
+}
+
+#home header .hd_inner .hd_tel p span.tel_number::before {
+  background: url(/img/tel_white.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/*                スマフォメニューボタン
+======================================================= */
+#sp_menu_btn {
+  display: none;
+  width: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #sp_menu_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+#sp_menu_btn .sp_btn_cont {
+  position: relative;
+  height: 26px;
+  width: 30px;
+}
+
+#sp_menu_btn .sp_btn_cont span {
+  position: absolute;
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: #42560b;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#sp_menu_btn .sp_btn_cont span.border01 {
+  top: 0;
+}
+
+#sp_menu_btn .sp_btn_cont span.border02 {
+  top: 12px;
+}
+
+#sp_menu_btn .sp_btn_cont span.border03 {
+  top: 24px;
+}
+
+#home header #sp_menu_btn .sp_btn_cont span {
+  background: #fff;
+}
+
+/*               スマフォメニュー
+======================================================= */
+#sp_menu {
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(/img/bk_pattern.jpg);
+  z-index: -1;
+  padding-bottom: 50px;
+  color: #42560b;
+  font-size: 15px;
+}
+
+#sp_menu #sp_menu_area {
+  padding: 30px 26px 0;
+}
+
+#sp_menu #sp_menu_area #sp_gnavi ul li {
+  width: 100%;
+  padding: 16px;
+}
+
+#sp_menu #sp_menu_area #sp_gnavi ul li > a, #sp_menu #sp_menu_area #sp_gnavi ul li > span {
+  text-align: center;
+  position: relative;
+  display: block;
+  font-size: 20px;
+  width: 100%;
+  text-decoration: none;
+  font-family: "IM Fell English", serif;
+}
+
+.sp_menu_open #sp_menu {
+  opacity: 1;
+  z-index: 9999;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.sp_menu_open header #sp_menu_btn .sp_btn_cont span.border01 {
+  top: 2px;
+  -webkit-transform: translateY(7px) rotate(45deg);
+          transform: translateY(7px) rotate(45deg);
+}
+
+.sp_menu_open header #sp_menu_btn .sp_btn_cont span.border02 {
+  opacity: 0;
+}
+
+.sp_menu_open header #sp_menu_btn .sp_btn_cont span.border03 {
+  top: 14px;
+  -webkit-transform: translateY(-4px) rotate(-45deg);
+          transform: translateY(-4px) rotate(-45deg);
+}
+
+.sp_menu_open#sp_menu.scroll {
+  top: 60px;
+}
+
+#home #sp_menu {
+  color: #fff;
+}
+
+body.sp_menu_open {
+  overflow: hidden;
+}
+
+#home.sp_menu_open header {
+  background: #f6c100;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+/*                NEWS
+======================================================= */
+#news {
+  max-width: 950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#news .news_group {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px 50px;
+}
+
+#news .news_group .news_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 14px 60px 14px 20px;
+}
+
+#news .news_group .news_block + .news_block {
+  border-top: 1px solid #e3e3e3;
+}
+
+@media only screen and (max-width: 768px) {
+  #news .news_group .news_block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 20px 0;
+  }
+}
+
+#news .news_group .news_block .date {
+  font-family: "IM Fell English", serif;
+  color: #a0aa85;
+  font-size: 20px;
+}
+
+#news .news_group .news_block .news_title {
+  font-family: "Noto Sans JP", sans-serif;
+  color: #7d8a5a;
+  padding-left: 36px;
+  padding-top: 0.1em;
+  line-height: 1.6em;
+}
+
+@media only screen and (max-width: 768px) {
+  #news .news_group .news_block .news_title {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (min-width: 769px) {
+  #news .news_group .news_block {
+    position: relative;
+  }
+  #news .news_group .news_block::before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 50%;
+    right: 20px;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #aab392;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+}
+
+#news .news_group .news_block:hover::before {
+  right: 14px;
+}
+
+/*                menu
+======================================================= */
+#menu {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#menu .menu_group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+@media only screen and (max-width: 768px) {
+  #menu .menu_group {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+#menu .menu_group .menu_block {
+  padding: 0 10px;
+  width: 33.3333%;
+}
+
+@media only screen and (min-width: 769px) {
+  #menu .menu_group .menu_block:nth-child(n+4) {
+    margin-top: 70px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #menu .menu_group .menu_block {
+    width: 100%;
+    max-width: 400px;
+  }
+  #menu .menu_group .menu_block:nth-child(n+2) {
+    margin-top: 40px;
+  }
+}
+
+#menu .menu_group .menu_block p {
+  text-align: center;
+}
+
+#menu .menu_group .menu_block p.menu_title {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+}
+
+#menu .menu_group .menu_block p.menu_price {
+  font-size: 20px;
+  font-family: "IM Fell English", serif;
+  font-weight: 700;
+}
+
+#menu .menu_group .menu_block p.menu_catch {
+  font-family: "Noto Sans JP", sans-serif;
+  padding-top: 1em;
+}
+
+#menu .menu_group .menu_block p.menu_discription {
+  font-family: "Noto Sans JP", sans-serif;
+  padding-top: 2em;
+  position: relative;
+}
+
+#menu .menu_group .menu_block p.menu_discription::before {
+  position: absolute;
+  content: "";
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translateX(-50%) rotate(45deg);
+          transform: translateX(-50%) rotate(45deg);
+  display: block;
+  background-color: #42560b;
+  width: 10px;
+  height: 10px;
+}
+
+/*                 トップへ戻るボタン
+======================================================= */
+#page_top {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+  #page_top {
+    right: 24px;
+    bottom: 30px;
+  }
+}
+
+#page_top.scroll {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#page_top.bottom {
+  position: absolute;
+}
+
+#page_top .btn_top {
+  display: block;
+}
+
+@media only screen and (min-width: 769px) {
+  #page_top .btn_top {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  #page_top .btn_top:hover {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #page_top .btn_top img {
+    width: 42px;
+    height: auto;
+  }
+}
+
+#page_top .btn_top span {
+  position: relative;
+  display: block;
+  font-family: "IM Fell English", serif;
+  font-size: 12px;
+  text-align: center;
+  padding-left: 6px;
+}
+
+#page_top .btn_top span::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 2px;
+  left: 6px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 3.5px 7px 3.5px;
+  border-color: transparent transparent #42560b transparent;
+}
+
+@media only screen and (max-width: 768px) {
+  #page_top .btn_top span::before {
+    left: 2px;
+  }
+}
+
+/*                フッター
+======================================================= */
+footer {
+  background-color: #42560b;
+  padding: 24px 15px 20px;
+}
+
+@media only screen and (max-width: 768px) {
+  footer {
+    padding: 20px 0 10px;
+  }
+}
+
+footer .ft_inner .ft_logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+footer .ft_inner .ft_logo a {
+  display: block;
+}
+
+footer .ft_inner .copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+@media only screen and (max-width: 768px) {
+  footer .ft_inner .copyright {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 0.5em;
+  }
+}
+
+footer .ft_inner .copyright p {
+  font-size: 12px;
+  font-family: "IM Fell English", serif;
+  color: #a0aa85;
+}
+
+/*                 アニメーション
+======================================================= */
+@-webkit-keyframes fadein-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes fadein-up {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.home_section.active {
+  -webkit-animation-name: fadein-up;
+          animation-name: fadein-up;
+  -webkit-animation-duration: 0.8s;
+          animation-duration: 0.8s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+/*# sourceMappingURL=common.css.map */

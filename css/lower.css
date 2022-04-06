@@ -1,0 +1,126 @@
+#about .about_group {
+  margin-top: 80px;
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group {
+    margin-top: 0;
+  }
+}
+
+#about .about_group .about_width {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (max-width: 1500px) {
+  #about .about_group .about_width {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  #about .about_group .about_width {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group .about_width {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+
+#about .about_group .about_width .about_word {
+  width: 50%;
+  padding-right: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group .about_width .about_word {
+    width: 100%;
+    padding-right: 0;
+  }
+}
+
+#about .about_group .about_width .about_word h3 {
+  font-size: 22px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 700;
+}
+
+#about .about_group .about_width .about_word p {
+  padding-top: 40px;
+  font-size: 17px;
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  line-height: 2;
+}
+
+#about .about_group .about_photo {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group .about_photo {
+    position: relative;
+    width: 100%;
+    padding-left: 10%;
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+#about .about_group:last-child {
+  margin-top: 200px;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group:last-child {
+    margin-top: 50px;
+  }
+}
+
+#about .about_group:last-child .about_width {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+#about .about_group:last-child .about_width .about_word {
+  padding-right: 0;
+  padding-left: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group:last-child .about_width .about_word {
+    padding-left: 0;
+  }
+}
+
+#about .about_group:last-child .about_photo {
+  left: 0;
+  right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about_group:last-child .about_photo {
+    padding-left: 0;
+    padding-right: 10%;
+  }
+}
+/*# sourceMappingURL=lower.css.map */

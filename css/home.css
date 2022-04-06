@@ -1,0 +1,345 @@
+@charset "UTF-8";
+/*              ファーストビュー                
+======================================================*/
+#first_view {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#first_view .fv_slide {
+  height: 100%;
+  width: 100%;
+}
+
+#first_view .fv_slide .slick-list {
+  height: 100%;
+}
+
+#first_view .fv_slide .slick-track {
+  height: 100%;
+}
+
+#first_view .fv_slide .fv_bg {
+  height: 100%;
+  width: 100%;
+  background-image: url("/img/fv01_pc.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 768px) {
+  #first_view .fv_slide .fv_bg {
+    background-image: url(/img/fv01_sp.jpg);
+  }
+}
+
+#first_view .fv_slide .fv_bg.fv02 {
+  background-image: url(/img/fv02_pc.jpg);
+}
+
+@media only screen and (max-width: 768px) {
+  #first_view .fv_slide .fv_bg.fv02 {
+    background-image: url(/img/fv02_sp.jpg);
+  }
+}
+
+#first_view .fv_slide .fv_bg.fv03 {
+  background-image: url(/img/fv03_pc.jpg);
+}
+
+@media only screen and (max-width: 768px) {
+  #first_view .fv_slide .fv_bg.fv03 {
+    background-image: url(/img/fv03_sp.jpg);
+  }
+}
+
+#first_view .fv_slide .fv_bg.fv04 {
+  background-image: url(/img/fv04_pc.jpg);
+}
+
+@media only screen and (max-width: 768px) {
+  #first_view .fv_slide .fv_bg.fv04 {
+    background-image: url(/img/fv04_sp.jpg);
+  }
+}
+
+#first_view .fv_slide .slick-dots {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  width: auto;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 768px) {
+  #first_view .fv_slide .slick-dots {
+    right: 20px;
+    bottom: 20px;
+  }
+}
+
+#first_view .fv_slide .slick-dots li {
+  margin: 0;
+}
+
+#first_view .fv_slide .slick-dots li button::before {
+  color: #fff;
+  opacity: 1;
+}
+
+#first_view .fv_slide .slick-dots li.slick-active button::before {
+  color: #42560b;
+  opacity: 1;
+}
+
+#first_view .fv_logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 2;
+  max-width: 100%;
+  width: 500px;
+  padding: 20px;
+}
+
+#first_view .fv_logo img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  max-width: 80vw;
+  height: auto;
+}
+
+#first_view .fv_loading {
+  background: url(/img/bk_pattern.jpg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+
+#first_view .fv_loading.load {
+  opacity: 0;
+  -webkit-transition: all 3.5s;
+  transition: all 3.5s;
+}
+
+#first_view .fv_loading.none {
+  display: none;
+}
+
+#first_view .fv_loading .fv_logo_loading::before {
+  background: url(/img/bk_pattern.jpg);
+  position: absolute;
+  content: "";
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+}
+
+#first_view .fv_loading .fv_logo_loading.load::before {
+  height: 0;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+#first_view::before, #first_view::after {
+  position: absolute;
+  left: 0;
+  display: block;
+  content: "";
+  width: 100vw;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#first_view::before {
+  top: 0;
+}
+
+#first_view::after {
+  bottom: 0;
+}
+
+#first_view.load::before, #first_view.load::after {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: all 1.5s;
+  transition: all 1.5s;
+}
+
+/*              MORE                
+======================================================*/
+.more_btn {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.more_btn a {
+  display: block;
+  background-color: #fff;
+  border: 2px solid #42560b;
+  width: 300px;
+  padding: 26px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.more_btn a::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 18px 18px 0;
+  border-color: transparent #42560b transparent transparent;
+}
+
+@media only screen and (min-width: 769px) {
+  .more_btn a {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .more_btn a::before {
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .more_btn a:hover {
+    color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .more_btn a:hover::before {
+    border-width: 0 400px 400px 0;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+}
+
+.more_btn a span {
+  font-size: 30px;
+  font-family: "IM Fell English", serif;
+  z-index: 1;
+  position: relative;
+}
+
+/*              ACCESS                
+======================================================*/
+#access .access_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  #access .access_flex {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+#access .access_flex .access_map {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  position: relative;
+  width: 100%;
+  height: 550px;
+}
+
+@media only screen and (max-width: 768px) {
+  #access .access_flex .access_map {
+    -webkit-box-flex: 1;
+        -ms-flex: auto;
+            flex: auto;
+    height: 0;
+    padding-top: 84%;
+  }
+}
+
+#access .access_flex .access_map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#access .access_flex .access_prof {
+  width: 450px;
+  margin-left: 50px;
+}
+
+@media only screen and (max-width: 1024px) {
+  #access .access_flex .access_prof {
+    width: 40%;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #access .access_flex .access_prof {
+    width: 100%;
+    margin-left: 0;
+    padding-top: 30px;
+  }
+}
+
+#access .access_flex .access_prof dl {
+  padding: 16px 24px;
+  border-top: 1px solid #fff;
+}
+
+#access .access_flex .access_prof dl:last-child {
+  border-bottom: 1px solid #fff;
+}
+
+#access .access_flex .access_prof dl dt, #access .access_flex .access_prof dl dd {
+  font-family: "Noto Sans JP", sans-serif;
+  line-height: 1.4;
+}
+
+@media only screen and (max-width: 768px) {
+  #access .access_flex .access_prof dl dt, #access .access_flex .access_prof dl dd {
+    font-size: 14px;
+  }
+}
+
+#access .access_flex .access_prof dl:first-child dt {
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 768px) {
+  #access .access_flex .access_prof dl:first-child dt {
+    font-size: 16px;
+  }
+}
+
+#access .access_flex .access_prof dl dt {
+  font-weight: 700;
+}
+
+#access .access_flex .access_prof dl dd {
+  font-weight: 400;
+}
+/*# sourceMappingURL=home.css.map */
